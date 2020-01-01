@@ -13,7 +13,6 @@ public class Stay {
         this.rating = rating;
         this.picture = picture;
     }
-
     public String getLocation() {
         return location;
     }

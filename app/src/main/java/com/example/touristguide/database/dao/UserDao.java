@@ -16,7 +16,7 @@ public interface UserDao {
     void insertOneUser(Users user);
     @Insert
     void insertMultipleUsers(List<Users> userList);
-    @Query("Select * from Users where id = :id")
+    @Query("SELECT * FROM Users WHERE id = :id")
     Users fetchOneUserById(int id);
     @Update
     void updateUser(Users user);
