@@ -1,11 +1,13 @@
 package com.example.touristguide.activitites;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.room.Room;
 
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.os.Handler;
 import android.text.TextUtils;
 import android.util.Patterns;
 import android.view.View;
@@ -16,9 +18,12 @@ import android.widget.Toast;
 
 import com.example.touristguide.MainActivity;
 import com.example.touristguide.R;
+import com.example.touristguide.database.DatabaseManager;
+import com.example.touristguide.database.dao.UserDao;
+import com.example.touristguide.database.models.Users;
 import com.example.touristguide.utils.Globals;
 
-public class RegisterActivity extends AppCompatActivity {
+public class RegisterActivity extends AppCompatActivity{
 
     public static final String MyPreferences = "myPrefs";
     public static final String Username = "usernameKey";
@@ -30,6 +35,9 @@ public class RegisterActivity extends AppCompatActivity {
     private Button registerButton;
     private TextView goToLogin;
     private SharedPreferences sharedPreferences;
+    private UserDao userDao;
+    private Handler handler;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,6 +51,10 @@ public class RegisterActivity extends AppCompatActivity {
         goToLogin = (TextView) findViewById(R.id.loginText);
         sharedPreferences = getSharedPreferences(MyPreferences, Context.MODE_PRIVATE);
 
+        userDao = Room.databaseBuilder(this, DatabaseManager.class, "db_android")
+                .allowMainThreadQueries()
+                .build()
+                .getUserDao();
 
         goToLogin.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -67,8 +79,24 @@ public class RegisterActivity extends AppCompatActivity {
                     Toast.makeText(RegisterActivity.this, "SharedPreferences Done"
                             , Toast.LENGTH_LONG).show();
 
-                    Globals.credentialsMap.put(username.getText().toString(),
-                            password.getText().toString());
+                    handler = new Handler();
+
+                    final Runnable r = new Runnable() {
+                        @Override
+                        public void run() {
+                            Globals.credentialsMap.put(username.getText().toString(),
+                                    password.getText().toString());
+
+                            Users user = new Users(username.getText().toString(), email.getText().toString()
+                                    , password.getText().toString());
+
+                            userDao.insertOneUser(user);
+
+                        }
+                    };
+
+                    handler.postDelayed(r, 1000);
+
 
                     Intent intent = new Intent(RegisterActivity.this,
                             LoginActivity.class);

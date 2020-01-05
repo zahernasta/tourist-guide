@@ -16,6 +16,12 @@ public class Users implements Parcelable {
     @NonNull
     @ColumnInfo(name = "username")
     private String username;
+
+    @NonNull
+    public String getPassword() {
+        return password;
+    }
+
     @NonNull
     @ColumnInfo(name = "email")
     private String email;
@@ -23,10 +29,8 @@ public class Users implements Parcelable {
     @ColumnInfo(name = "password")
     private String password;
 
-    public Users() {}
+    public Users(@NonNull String username, @NonNull String email, @NonNull String password) {
 
-    public Users(long id, @NonNull String username, @NonNull String email, @NonNull String password) {
-        this.id = id;
         this.username = username;
         this.email = email;
         this.password = password;
@@ -36,6 +40,14 @@ public class Users implements Parcelable {
     @NonNull
     public long getId() {
         return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    public void setPassword(@NonNull String password) {
+        this.password = password;
     }
 
     @NonNull
@@ -62,7 +74,6 @@ public class Users implements Parcelable {
                 "id=" + id +
                 ", username='" + username + '\'' +
                 ", email='" + email + '\'' +
-                ", password='" + password + '\'' +
                 '}';
     }
 
@@ -74,6 +85,7 @@ public class Users implements Parcelable {
 
     @Override
     public void writeToParcel(Parcel dest, int flags) {
+        dest.writeLong(id);
         dest.writeString(username);
         dest.writeString(email);
         dest.writeString(password);

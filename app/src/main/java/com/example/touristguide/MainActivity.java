@@ -6,10 +6,14 @@ import androidx.viewpager.widget.ViewPager;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
+import android.widget.TextView;
 
 import com.example.touristguide.activitites.EditProfileActivity;
 import com.example.touristguide.activitites.StaysActivity;
+import com.example.touristguide.activitites.ViewProfileActivity;
+import com.example.touristguide.database.models.Users;
 import com.example.touristguide.fragments.FavoriteFragment;
 import com.example.touristguide.fragments.HomeFragment;
 import com.example.touristguide.fragments.InboxFragement;
@@ -20,6 +24,8 @@ import com.google.android.material.tabs.TabLayout;
 
 public class MainActivity extends AppCompatActivity {
 
+    private static final String TAG = "MainActivity";
+    
     private TabAdapter tabAdapter;
     private TabLayout tabLayout;
     private CardView cardView;
@@ -32,11 +38,14 @@ public class MainActivity extends AppCompatActivity {
         R.drawable.ic_person_outline_black_24dp
     };
 
+    Users user;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        user = (Users) getIntent().getParcelableExtra("User");
         tabLayout = (TabLayout)findViewById(R.id.tabLayout);
         viewPager = (ViewPager)findViewById(R.id.viewPager);
         cardView = (CardView) findViewById(R.id.editProfileCard);
@@ -58,11 +67,18 @@ public class MainActivity extends AppCompatActivity {
 
     public void openEditProfile(View view) {
         Intent intent = new Intent(this, EditProfileActivity.class);
+        intent.putExtra("User", user);
         startActivity(intent);
     }
 
     public void openStaysCard(View view) {
         Intent intent = new Intent(this, StaysActivity.class);
+        startActivity(intent);
+    }
+
+    public void openViewProfile(View view) {
+        Intent intent = new Intent(this, ViewProfileActivity.class);
+        intent.putExtra("User", user);
         startActivity(intent);
     }
 }

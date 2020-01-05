@@ -23,7 +23,7 @@ import org.w3c.dom.Text;
  */
 public class UserFragment extends Fragment {
 
-    TextView userName, userEmail, userNumber;
+    TextView userName, userEmail, userNumber, viewProfile;
 
     public UserFragment() {
         // Required empty public constructor
@@ -36,22 +36,29 @@ public class UserFragment extends Fragment {
 
 
         View rootView = inflater.inflate(R.layout.fragment_user, container, false);
-        userName = (TextView) rootView.findViewById(R.id.userNameText);
-        userEmail = (TextView) rootView.findViewById(R.id.emailText);
-        userNumber = (TextView) rootView.findViewById(R.id.numberText);
+//        userName = (TextView) rootView.findViewById(R.id.userNameText);
+//        userEmail = (TextView) rootView.findViewById(R.id.emailText);
+//        userNumber = (TextView) rootView.findViewById(R.id.numberText);
+//        viewProfile = (TextView) rootView.findViewById(R.id.view_profile_id);
 
-        Bundle bundle = getArguments();
-
-
-        if (bundle != null) {
-            Log.v("IT_WORKS", bundle.toString());
-            userName.setText(bundle.getString("name"));
-            userEmail.setText(bundle.getString("email"));
-            userNumber.setText(bundle.getString("number"));
-
-        } else {
-            Log.v("IT_NO_WORK", "It Doesn't work");
-        }
+//        Bundle bundle = getArguments();
+//
+//        viewProfile.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//
+//            }
+//        });
+//
+//        if (bundle != null) {
+//            Log.v("IT_WORKS", bundle.toString());
+//            userName.setText(bundle.getString("name"));
+//            userEmail.setText(bundle.getString("email"));
+//            userNumber.setText(bundle.getString("number"));
+//
+//        } else {
+//            Log.v("IT_NO_WORK", "It Doesn't work");
+//        }
 
 
 

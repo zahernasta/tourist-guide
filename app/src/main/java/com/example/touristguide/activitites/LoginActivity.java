@@ -1,9 +1,15 @@
 package com.example.touristguide.activitites;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.room.Database;
+import androidx.room.Room;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.os.Handler;
+import android.provider.ContactsContract;
 import android.provider.Settings;
 import android.text.TextUtils;
 import android.util.Log;
@@ -15,6 +21,9 @@ import android.widget.Toast;
 
 import com.example.touristguide.MainActivity;
 import com.example.touristguide.R;
+import com.example.touristguide.database.DatabaseManager;
+import com.example.touristguide.database.dao.UserDao;
+import com.example.touristguide.database.models.Users;
 import com.example.touristguide.utils.Globals;
 
 import org.w3c.dom.Text;
@@ -23,11 +32,23 @@ import java.util.Iterator;
 import java.util.Map;
 
 public class LoginActivity extends AppCompatActivity {
+
+    public static final String MyPreferences = "myPrefs";
+    public static final String Username = "usernameKey";
+    public static final String Password = "passwordKey";
+
+
     private static final String TAG = "LoginActivity";
     private EditText username;
     private EditText password;
     private Button loginButton;
     private TextView goToRegister;
+    private SharedPreferences sharedPreferences;
+
+    private UserDao userDao;
+    private Handler handler;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,6 +60,12 @@ public class LoginActivity extends AppCompatActivity {
         password = (EditText) findViewById(R.id.loginPasswordEditText);
         loginButton = (Button) findViewById(R.id.loginButton);
         goToRegister = (TextView) findViewById(R.id.registerText);
+        sharedPreferences = getSharedPreferences(MyPreferences, Context.MODE_PRIVATE);
+
+        userDao = Room.databaseBuilder(this, DatabaseManager.class, "db_android")
+                    .allowMainThreadQueries()
+                    .build()
+                    .getUserDao();
 
         goToRegister.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -55,27 +82,40 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if(checkDataEntered()) {
-                    if(Globals.credentialsMap.containsKey(username.getText().toString())) {
-                        if(Globals.credentialsMap.get(username.getText().toString()).equals(
-                                password.getText().toString() )) {
+//                    if(Globals.credentialsMap.containsKey(username.getText().toString())) {
+//                        if(username.getText().toString()
+//                                .equals(sharedPreferences.getString(Username, ""))) {
+//                            if(password.getText().toString()
+//                                    .equals(sharedPreferences.getString(Password, ""))) {
+//                        if(Globals.credentialsMap.get(username.getText().toString()).equals(
+//                                password.getText().toString() )) {
 
-                            Intent intent = new Intent(LoginActivity.this,
-                                    MainActivity.class);
+                    handler = new Handler();
 
-                            startActivity(intent);
+                    final Runnable r = new Runnable() {
+                        @Override
+                        public void run() {
+                            Users user = userDao.fetchOneUser(username.getText().toString(),
+                                    password.getText().toString());
+                            if ( user != null) {
+                                Log.v("LoginActivitiy", user.toString());
+                                Intent intent = new Intent(LoginActivity.this,
+                                        MainActivity.class);
+                                intent.putExtra("User", user);
 
-                            LoginActivity.this.finish();
+                                startActivity(intent);
 
-                        } else {
-                            Toast toast = Toast.makeText(LoginActivity.this,
-                                    "Wrong password", Toast.LENGTH_SHORT);
-                            toast.show();
+                                LoginActivity.this.finish();
+
+                            } else {
+                                Toast toast = Toast.makeText(LoginActivity.this, "user doesn't exists"
+                                        ,Toast.LENGTH_SHORT);
+                                toast.show();
+                            }
                         }
-                    } else {
-                        Toast toast = Toast.makeText(LoginActivity.this,
-                                "Wrong username", Toast.LENGTH_SHORT);
-                        toast.show();
-                    }
+                    };
+
+                    handler.postDelayed(r, 1000);
                 }
             }
         });

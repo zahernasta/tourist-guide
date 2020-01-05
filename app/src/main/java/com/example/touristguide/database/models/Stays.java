@@ -50,7 +50,6 @@ public class Stays implements Parcelable {
         this.userId = userId;
     }
 
-    public Stays() {}
 
     protected Stays(Parcel in) {
         id = in.readLong();
@@ -73,9 +72,6 @@ public class Stays implements Parcelable {
     };
 
 
-    public long getUserId() {
-        return userId;
-    }
 
     public void setId(long id) {
         this.id = id;
