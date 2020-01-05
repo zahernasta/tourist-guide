@@ -15,11 +15,12 @@ import androidx.annotation.Nullable;
 
 import com.example.touristguide.R;
 import com.example.touristguide.components.Stay;
+import com.example.touristguide.database.models.Stays;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class StayListAdapter extends ArrayAdapter<Stay> {
+public class StayListAdapter extends ArrayAdapter<Stays> {
 
     private Context mContext;
     private int mResource;
@@ -30,7 +31,7 @@ public class StayListAdapter extends ArrayAdapter<Stay> {
      * @param resource
      * @param objects
      */
-    public StayListAdapter(@NonNull Context context, int resource, @NonNull ArrayList<Stay> objects) {
+    public StayListAdapter(@NonNull Context context, int resource, @NonNull List<Stays> objects) {
         super(context, resource, objects);
 
         mContext = context;
@@ -49,10 +50,10 @@ public class StayListAdapter extends ArrayAdapter<Stay> {
     @Override
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
         //getting stays information
-        String location = getItem(position).getLocation();
-        String description = getItem(position).getDescription();
-        float rating = getItem(position).getRating();
-        int picture = getItem(position).getPicture();
+        String location = getItem(position).getStayName();
+        String description = getItem(position).getStayDescription();
+        float rating = 5;
+        int picture = R.drawable.stay_bucharest_modern;
 
         //create the stay object with the information
         Stay stay = new Stay(location, description, rating, picture);
