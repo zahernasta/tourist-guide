@@ -76,7 +76,7 @@ public class RegisterActivity extends AppCompatActivity{
                     editor.putString(Password, password.getText().toString());
                     editor.commit();
 
-                    Toast.makeText(RegisterActivity.this, "SharedPreferences Done"
+                    Toast.makeText(RegisterActivity.this, getString(R.string.sharedpref_done)
                             , Toast.LENGTH_LONG).show();
 
                     handler = new Handler();
@@ -120,28 +120,28 @@ public class RegisterActivity extends AppCompatActivity{
 
     private boolean checkDataEntered() {
         if(isEmpty(username)) {
-            Toast toast =  Toast.makeText(this, "You must provide a user name",
+            Toast toast =  Toast.makeText(this, getString(R.string.provide_username),
                     Toast.LENGTH_SHORT);
             toast.show();
-            username.setError("Name is required");
+            username.setError(getString(R.string.username_required));
 
             return false;
         }
 
         if(!isEmail(email)) {
-            Toast toast =  Toast.makeText(this, "You must provide a valid email",
+            Toast toast =  Toast.makeText(this, getString(R.string.provide_email),
                     Toast.LENGTH_SHORT);
             toast.show();
-            email.setError("Email is required");
+            email.setError(getString(R.string.require_email));
 
             return false;
         }
 
         if(isEmpty(password)) {
-            Toast toast =  Toast.makeText(this, "You must provide a user password",
+            Toast toast =  Toast.makeText(this, getString(R.string.provide_password),
                     Toast.LENGTH_SHORT);
             toast.show();
-            password.setError("Password is required");
+            password.setError(getString(R.string.require_password));
 
             return false;
         }

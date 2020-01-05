@@ -76,7 +76,12 @@ public class StaysActivity extends AppCompatActivity {
 
         ListView mListView = (ListView) findViewById(R.id.staysListView);
         mListView.setDivider(null);
-
+        /*
+        * ATENTIE!!!!!! ATENTIE!!!! ATENTIE!!!!
+        * PRELUAREA POZELOR DIN BAZA DE DATE IN STAYS NU FUNCTIONEAZA
+        * EXISTA O VARIABILA HARDCODATA IN FISIERUL STAYLISTADAPTER PENTRU POZA
+        * DIN ACEST MOTIV TOATE LOCUINTELE AU ACEEASI POZA
+         */
         staysList = stayDao.getAllStays();
 
 //        Stay stay1 = new Stay("Bucharest, Romania",

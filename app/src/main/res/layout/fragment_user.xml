@@ -21,7 +21,6 @@
             android:layout_height="wrap_content"
             android:text=""
             android:textSize="20dp"
-            android:layout_marginTop="10dp"
             android:fontFamily="sans-serif-condensed"
             android:textColor="#000"
             />
@@ -30,7 +29,6 @@
             android:id="@+id/viewProfileCard"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginTop="20dp"
             app:cardCornerRadius="4dp"
             android:clickable="true"
             android:onClick="openViewProfile">
@@ -136,196 +134,6 @@
                     android:layout_width="48dp"
                     android:layout_height="48dp"
                     android:layout_gravity="right"
-                    android:src="@drawable/ic_favorite_border_black_48dp"
-                    android:layout_marginRight="20dp"
-                    android:layout_marginTop="20dp"
-                    android:scaleType="fitXY"
-                    />
-
-            </LinearLayout>
-
-
-
-        </androidx.cardview.widget.CardView>
-
-        <androidx.cardview.widget.CardView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginTop="10dp"
-            app:cardCornerRadius="4dp">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
-                android:text="@string/currency_text"
-                android:textSize="30dp"
-                android:fontFamily="sans-serif-condensed"
-                android:layout_marginBottom="20dp"
-                android:layout_marginTop="20dp"/>
-
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical" >
-
-                <ImageView
-                    android:layout_width="48dp"
-                    android:layout_height="48dp"
-                    android:layout_gravity="right"
-                    android:src="@drawable/ic_attach_money_black_48dp"
-                    android:layout_marginRight="20dp"
-                    android:layout_marginTop="20dp"
-                    android:scaleType="fitXY"
-                    />
-
-            </LinearLayout>
-
-
-
-        </androidx.cardview.widget.CardView>
-
-        <androidx.cardview.widget.CardView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginTop="10dp"
-            app:cardCornerRadius="4dp">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
-                android:text="@string/call_text"
-                android:textSize="30dp"
-                android:fontFamily="sans-serif-condensed"
-                android:layout_marginBottom="20dp"
-                android:layout_marginTop="20dp"/>
-
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical" >
-
-                <ImageView
-                    android:layout_width="48dp"
-                    android:layout_height="48dp"
-                    android:layout_gravity="right"
-                    android:src="@drawable/ic_phone_android_black_48dp"
-                    android:layout_marginRight="20dp"
-                    android:layout_marginTop="20dp"
-                    android:scaleType="fitXY"
-                    />
-
-            </LinearLayout>
-
-
-
-        </androidx.cardview.widget.CardView>
-
-        <androidx.cardview.widget.CardView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginTop="10dp"
-            app:cardCornerRadius="4dp">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
-                android:text="@string/language_text"
-                android:textSize="30dp"
-                android:fontFamily="sans-serif-condensed"
-                android:layout_marginBottom="20dp"
-                android:layout_marginTop="20dp"/>
-
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical" >
-
-                <ImageView
-                    android:layout_width="48dp"
-                    android:layout_height="48dp"
-                    android:layout_gravity="right"
-                    android:src="@drawable/ic_language_black_48dp"
-                    android:layout_marginRight="20dp"
-                    android:layout_marginTop="20dp"
-                    android:scaleType="fitXY"
-                    />
-
-            </LinearLayout>
-
-
-
-        </androidx.cardview.widget.CardView>
-
-        <androidx.cardview.widget.CardView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginTop="10dp"
-            app:cardCornerRadius="4dp">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
-                android:text="@string/consent_text"
-                android:textSize="30dp"
-                android:fontFamily="sans-serif-condensed"
-                android:layout_marginBottom="20dp"
-                android:layout_marginTop="20dp"/>
-
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical" >
-
-                <ImageView
-                    android:layout_width="48dp"
-                    android:layout_height="48dp"
-                    android:layout_gravity="right"
-                    android:src="@drawable/ic_assignment_black_48dp"
-                    android:layout_marginRight="20dp"
-                    android:layout_marginTop="20dp"
-                    android:scaleType="fitXY"
-                    />
-
-            </LinearLayout>
-
-
-
-        </androidx.cardview.widget.CardView>
-
-        <androidx.cardview.widget.CardView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginTop="10dp"
-            app:cardCornerRadius="4dp">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
-                android:text="@string/become_host_text"
-                android:textSize="30dp"
-                android:fontFamily="sans-serif-condensed"
-                android:layout_marginBottom="20dp"
-                android:layout_marginTop="20dp"/>
-
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical" >
-
-                <ImageView
-                    android:layout_width="48dp"
-                    android:layout_height="48dp"
-                    android:layout_gravity="right"
                     android:src="@drawable/ic_home_black_48dp"
                     android:layout_marginRight="20dp"
                     android:layout_marginTop="20dp"
@@ -342,7 +150,239 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginTop="10dp"
-            app:cardCornerRadius="4dp">
+            app:cardCornerRadius="4dp"
+            android:clickable="true"
+            android:onClick="openAddFavorite">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:text="@string/add_a_new_favorite"
+                android:textSize="30dp"
+                android:fontFamily="sans-serif-condensed"
+                android:layout_marginBottom="20dp"
+                android:layout_marginTop="20dp"/>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical" >
+
+                <ImageView
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:layout_gravity="right"
+                    android:src="@drawable/ic_favorite_border_black_48dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginTop="20dp"
+                    android:scaleType="fitXY"
+                    />
+
+            </LinearLayout>
+
+
+
+<!--        </androidx.cardview.widget.CardView>-->
+
+<!--        <androidx.cardview.widget.CardView-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="match_parent"-->
+<!--            android:layout_marginTop="10dp"-->
+<!--            app:cardCornerRadius="4dp">-->
+
+<!--            <TextView-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginLeft="20dp"-->
+<!--                android:text="@string/currency_text"-->
+<!--                android:textSize="30dp"-->
+<!--                android:fontFamily="sans-serif-condensed"-->
+<!--                android:layout_marginBottom="20dp"-->
+<!--                android:layout_marginTop="20dp"/>-->
+
+
+<!--            <LinearLayout-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:orientation="vertical" >-->
+
+<!--                <ImageView-->
+<!--                    android:layout_width="48dp"-->
+<!--                    android:layout_height="48dp"-->
+<!--                    android:layout_gravity="right"-->
+<!--                    android:src="@drawable/ic_attach_money_black_48dp"-->
+<!--                    android:layout_marginRight="20dp"-->
+<!--                    android:layout_marginTop="20dp"-->
+<!--                    android:scaleType="fitXY"-->
+<!--                    />-->
+
+<!--            </LinearLayout>-->
+
+
+
+<!--        </androidx.cardview.widget.CardView>-->
+
+<!--        <androidx.cardview.widget.CardView-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="match_parent"-->
+<!--            android:layout_marginTop="10dp"-->
+<!--            app:cardCornerRadius="4dp">-->
+
+<!--            <TextView-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginLeft="20dp"-->
+<!--                android:text="@string/call_text"-->
+<!--                android:textSize="30dp"-->
+<!--                android:fontFamily="sans-serif-condensed"-->
+<!--                android:layout_marginBottom="20dp"-->
+<!--                android:layout_marginTop="20dp"/>-->
+
+
+<!--            <LinearLayout-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:orientation="vertical" >-->
+
+<!--                <ImageView-->
+<!--                    android:layout_width="48dp"-->
+<!--                    android:layout_height="48dp"-->
+<!--                    android:layout_gravity="right"-->
+<!--                    android:src="@drawable/ic_phone_android_black_48dp"-->
+<!--                    android:layout_marginRight="20dp"-->
+<!--                    android:layout_marginTop="20dp"-->
+<!--                    android:scaleType="fitXY"-->
+<!--                    />-->
+
+<!--            </LinearLayout>-->
+
+
+
+<!--        </androidx.cardview.widget.CardView>-->
+
+<!--        <androidx.cardview.widget.CardView-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="match_parent"-->
+<!--            android:layout_marginTop="10dp"-->
+<!--            app:cardCornerRadius="4dp">-->
+
+<!--            <TextView-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginLeft="20dp"-->
+<!--                android:text="@string/language_text"-->
+<!--                android:textSize="30dp"-->
+<!--                android:fontFamily="sans-serif-condensed"-->
+<!--                android:layout_marginBottom="20dp"-->
+<!--                android:layout_marginTop="20dp"/>-->
+
+
+<!--            <LinearLayout-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:orientation="vertical" >-->
+
+<!--                <ImageView-->
+<!--                    android:layout_width="48dp"-->
+<!--                    android:layout_height="48dp"-->
+<!--                    android:layout_gravity="right"-->
+<!--                    android:src="@drawable/ic_language_black_48dp"-->
+<!--                    android:layout_marginRight="20dp"-->
+<!--                    android:layout_marginTop="20dp"-->
+<!--                    android:scaleType="fitXY"-->
+<!--                    />-->
+
+<!--            </LinearLayout>-->
+
+
+
+<!--        </androidx.cardview.widget.CardView>-->
+
+<!--        <androidx.cardview.widget.CardView-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="match_parent"-->
+<!--            android:layout_marginTop="10dp"-->
+<!--            app:cardCornerRadius="4dp">-->
+
+<!--            <TextView-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginLeft="20dp"-->
+<!--                android:text="@string/consent_text"-->
+<!--                android:textSize="30dp"-->
+<!--                android:fontFamily="sans-serif-condensed"-->
+<!--                android:layout_marginBottom="20dp"-->
+<!--                android:layout_marginTop="20dp"/>-->
+
+
+<!--            <LinearLayout-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:orientation="vertical" >-->
+
+<!--                <ImageView-->
+<!--                    android:layout_width="48dp"-->
+<!--                    android:layout_height="48dp"-->
+<!--                    android:layout_gravity="right"-->
+<!--                    android:src="@drawable/ic_assignment_black_48dp"-->
+<!--                    android:layout_marginRight="20dp"-->
+<!--                    android:layout_marginTop="20dp"-->
+<!--                    android:scaleType="fitXY"-->
+<!--                    />-->
+
+<!--            </LinearLayout>-->
+
+
+
+<!--        </androidx.cardview.widget.CardView>-->
+
+<!--        <androidx.cardview.widget.CardView-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="match_parent"-->
+<!--            android:layout_marginTop="10dp"-->
+<!--            app:cardCornerRadius="4dp">-->
+
+<!--            <TextView-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginLeft="20dp"-->
+<!--                android:text="@string/become_host_text"-->
+<!--                android:textSize="30dp"-->
+<!--                android:fontFamily="sans-serif-condensed"-->
+<!--                android:layout_marginBottom="20dp"-->
+<!--                android:layout_marginTop="20dp"/>-->
+
+
+<!--            <LinearLayout-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:orientation="vertical" >-->
+
+<!--                <ImageView-->
+<!--                    android:layout_width="48dp"-->
+<!--                    android:layout_height="48dp"-->
+<!--                    android:layout_gravity="right"-->
+<!--                    android:src="@drawable/ic_home_black_48dp"-->
+<!--                    android:layout_marginRight="20dp"-->
+<!--                    android:layout_marginTop="20dp"-->
+<!--                    android:scaleType="fitXY"-->
+<!--                    />-->
+
+<!--            </LinearLayout>-->
+
+
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="10dp"
+            app:cardCornerRadius="4dp"
+            android:clickable="true"
+            android:onClick="onCLickLogout">
 
             <TextView
                 android:layout_width="wrap_content"

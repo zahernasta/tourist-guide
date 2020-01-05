@@ -108,7 +108,7 @@ public class LoginActivity extends AppCompatActivity {
                                 LoginActivity.this.finish();
 
                             } else {
-                                Toast toast = Toast.makeText(LoginActivity.this, "user doesn't exists"
+                                Toast toast = Toast.makeText(LoginActivity.this, getString(R.string.user_no_exist)
                                         ,Toast.LENGTH_SHORT);
                                 toast.show();
                             }
@@ -130,19 +130,19 @@ public class LoginActivity extends AppCompatActivity {
     private boolean checkDataEntered() {
 
         if(isEmpty(username)) {
-            Toast toast =  Toast.makeText(this, "You must provide a username",
+            Toast toast =  Toast.makeText(this, getString(R.string.provide_username),
                     Toast.LENGTH_SHORT);
             toast.show();
-            username.setError("Username is required");
+            username.setError(getString(R.string.username_required));
 
             return false;
         }
 
         if(isEmpty(password)) {
-            Toast toast =  Toast.makeText(this, "You must provide a password",
+            Toast toast =  Toast.makeText(this, getString(R.string.provide_password),
                     Toast.LENGTH_SHORT);
             toast.show();
-            password.setError("Password is required");
+            password.setError(getString(R.string.password_required));
 
             return false;
         }
