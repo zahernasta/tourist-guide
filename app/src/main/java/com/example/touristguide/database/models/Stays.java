@@ -14,7 +14,7 @@ import com.example.touristguide.components.Stay;
 import static androidx.room.ForeignKey.CASCADE;
 
 
-@Entity(foreignKeys = @ForeignKey(entity = Users.class,
+@Entity(tableName = "Stays", foreignKeys = @ForeignKey(entity = Users.class,
                                             parentColumns = "id",
                                             childColumns = "userId",
                                             onDelete = CASCADE))
@@ -41,9 +41,8 @@ public class Stays implements Parcelable {
     private long userId;
 
 
-    public Stays(long id, @NonNull String stayName, @NonNull String stayDescription,
+    public Stays(@NonNull String stayName, @NonNull String stayDescription,
                  @NonNull String stayPicture, long userId) {
-        this.id = id;
         this.stayName = stayName;
         this.stayDescription = stayDescription;
         this.stayPicture = stayPicture;
@@ -57,6 +56,10 @@ public class Stays implements Parcelable {
         stayDescription = in.readString();
         stayPicture = in.readString();
         userId = in.readLong();
+    }
+
+    public long getUserId() {
+        return userId;
     }
 
     public static final Creator<Stays> CREATOR = new Creator<Stays>() {

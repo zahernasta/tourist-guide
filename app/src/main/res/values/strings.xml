@@ -34,5 +34,21 @@
     <string name="sign_out_text">Sign Out</string>
     <string name="delete_user">Delete User</string>
     <string name="alertDialogDelete">Are you sure you want to delete this user?</string>
+    <string name="provideUsername">You must provide a editName</string>
+    <string name="provideEmail">You must provide a editEmail</string>
+    <string name="requireEmail">email is required</string>
+    <string name="requireUsername">username is required</string>
+    <string name="add_a_new_stay">Add a new stay</string>
+    <string name="stay_name">Stay Name</string>
+    <string name="stay_description">Stay Description</string>
+    <string name="stay_picture_added_in_java_string_atm">Stay Picture(Added in java string atm)</string>
+    <string name="add_stay">Add Stay</string>
+    <string name="add_stay_name">Please add a stay name</string>
+    <string name="add_stay_description">Please add a stay description</string>
+    <string name="stay_name_required">Stay name is required</string>
+    <string name="stay_description_required">Stay Description required</string>
+    <string name="add_stay_picture">Please add stay picture</string>
+    <string name="stay_picture_required">Stay picture required</string>
+    <string name="success_add_stay">Successfully added the stay</string>
 
 </resources>

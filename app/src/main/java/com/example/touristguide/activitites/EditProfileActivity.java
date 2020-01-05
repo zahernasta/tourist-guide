@@ -109,19 +109,19 @@ public class EditProfileActivity extends AppCompatActivity {
     private boolean checkDataEntered() {
 
         if(isEmpty(editName)) {
-            Toast toast =  Toast.makeText(this, "You must provide a editName",
+            Toast toast =  Toast.makeText(this, getString(R.string.provideUsername),
                     Toast.LENGTH_SHORT);
             toast.show();
-            editName.setError("username is required");
+            editName.setError(getString(R.string.requireUsername));
 
             return false;
         }
 
         if(isEmpty(editEmail)) {
-            Toast toast =  Toast.makeText(this, "You must provide a editEmail",
+            Toast toast =  Toast.makeText(this, getString(R.string.provideEmail),
                     Toast.LENGTH_SHORT);
             toast.show();
-            editEmail.setError("email is required");
+            editEmail.setError(getString(R.string.requireEmail));
 
             return false;
         }

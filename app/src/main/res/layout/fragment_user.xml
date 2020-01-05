@@ -112,13 +112,15 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginTop="10dp"
-            app:cardCornerRadius="4dp">
+            app:cardCornerRadius="4dp"
+            android:clickable="true"
+            android:onClick="openAddStay">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
-                android:text="@string/favorites_text"
+                android:text="@string/add_a_new_stay"
                 android:textSize="30dp"
                 android:fontFamily="sans-serif-condensed"
                 android:layout_marginBottom="20dp"

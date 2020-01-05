@@ -9,10 +9,12 @@ import androidx.room.Room;
 import androidx.room.RoomDatabase;
 import androidx.room.TypeConverters;
 
+import com.example.touristguide.database.dao.StayDao;
 import com.example.touristguide.database.dao.UserDao;
+import com.example.touristguide.database.models.Stays;
 import com.example.touristguide.database.models.Users;
 
-@Database(entities = {Users.class},
+@Database(entities = {Users.class, Stays.class},
             exportSchema = false,
             version = 1)
 public abstract class DatabaseManager
@@ -34,4 +36,5 @@ public abstract class DatabaseManager
     }
 
     public abstract UserDao getUserDao();
+    public abstract StayDao getStayDao();
 }

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activitites.AddStaysActivity">
+
+    <LinearLayout
+        android:id="@+id/llContainer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/add_a_new_stay"
+            android:textSize="48dp"
+            android:fontFamily="sans-serif-condensed"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp" />
+
+        <EditText
+            android:id="@+id/stayNameEditTextt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/stay_name"
+            android:textSize="30dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="20dp"
+            android:fontFamily="sans-serif-condensed"/>
+
+        <EditText
+            android:id="@+id/stayDescriptionEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/stay_description"
+            android:textSize="30dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="20dp"
+            android:fontFamily="sans-serif-condensed"
+            android:inputType="textEmailAddress"/>
+
+        <EditText
+            android:id="@+id/stayPictureEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/stay_picture_added_in_java_string_atm"
+            android:textSize="24dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="20dp"
+            android:fontFamily="sans-serif-condensed"
+            android:inputType="textEmailAddress"/>
+
+        <Button
+            android:id="@+id/addStayButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/add_stay"
+            android:fontFamily="sans-serif-condensed"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp" />
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -10,6 +10,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
+import com.example.touristguide.activitites.AddStaysActivity;
 import com.example.touristguide.activitites.EditProfileActivity;
 import com.example.touristguide.activitites.StaysActivity;
 import com.example.touristguide.activitites.ViewProfileActivity;
@@ -78,6 +79,12 @@ public class MainActivity extends AppCompatActivity {
 
     public void openViewProfile(View view) {
         Intent intent = new Intent(this, ViewProfileActivity.class);
+        intent.putExtra("User", user);
+        startActivity(intent);
+    }
+
+    public void openAddStay(View view) {
+        Intent intent = new Intent(this, AddStaysActivity.class);
         intent.putExtra("User", user);
         startActivity(intent);
     }
